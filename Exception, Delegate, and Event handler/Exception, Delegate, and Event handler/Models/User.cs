@@ -12,12 +12,15 @@ namespace Exception__Delegate__and_Event_handler.Models
         public string Name { get; set; }
         public int age { get; set; }
 
+        /*
         public User(int Id, string Name, int age)
         {
             this.Id = Id;
             this.Name = Name;
             this.age = age;
         }
+        */
+       
 
         public override string ToString()
         {
