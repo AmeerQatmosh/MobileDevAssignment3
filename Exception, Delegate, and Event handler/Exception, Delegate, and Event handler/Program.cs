@@ -14,20 +14,25 @@ namespace Exception__Delegate__and_Event_handler
     {
         static void Main(string[] args)
         {
-            
+
             while (true)
             {
+
+                Console.WriteLine("[1] Add User.");
+                Console.WriteLine("[2] Edit User. ");
+                Console.WriteLine("[3] Delete User. ");
+                Console.WriteLine("[4] Exit.");
 
                 Console.WriteLine("*Enter your choice! ");
                 int operation = Convert.ToInt32(Console.ReadLine());
                 switch (operation)
                 {
                     case 1:
-                        AddUser.addUser();
+                        ViewModels.ViewModels.UserViewModel.NewUser();
                         break;
 
                     case 2:
-                        Console.WriteLine("*Press any button to exit the application! ");
+                        
                         break;
 
                     case 3:
@@ -45,37 +50,7 @@ namespace Exception__Delegate__and_Event_handler
             }
 
         }
-        class AddUser
-        {
-            public static void addUser()
-            {
-
-
-                int Id;
-                string Name;
-                int age;
-                Console.WriteLine("Enter User Id: ");
-                Id = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter User Name: ");
-                Name = Console.ReadLine();
-                Console.WriteLine("Enter User Age: ");
-                age = Convert.ToInt32(Console.ReadLine());
-
-
-                Class1 newUser = new Class1();
-                newUser.AddNewUser(Id, Name, age);
-
-                Console.WriteLine("--------------------------");
-                Console.WriteLine("User is successfully added!");
-                Console.WriteLine("User id is: " + Id);
-                Console.WriteLine("User Name is: " + Name);
-                Console.WriteLine("User Age is: " + age);
-                Console.WriteLine("--------------------------");
- 
-            }
-
-
-        }    
+    
 
     }
 }

@@ -14,24 +14,71 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
 
     class ViewModels
     {
-        int newId;
-        string newName;
-        int newAge;
-
-        public void AddNewUser(int Id, string Name, int age)
+        public class UserViewModel : User
         {
-                newId = Id;
-                newName = Name;
-                newAge = age;
+            public UserViewModel(int Id, string Name, int age)
+            {
+                this.Id = Id;
+                this.Name = Name;
+                this.age = age;
 
-                Console.WriteLine(newId + newAge + newName);
+            }
+            internal static void NewUser()
+            {
+                List<User> users = new List<User>();
+
+                users.Add(new User());
+                Console.WriteLine("Enter user Id: ");
+                int _Id = Convert.ToInt32(Console.ReadLine());
+                users[0].Id = _Id;
+                Console.WriteLine("Enter user Name: ");
+                string _Name = Console.ReadLine();
+                users[0].Name = _Name;
+                Console.WriteLine("Enter user Age: ");
+                int _age = Convert.ToInt32(Console.ReadLine());
+                users[0].age = _age;
+
+                foreach (User user in users)
+                {
+                    Console.WriteLine("All user details: ");
+                    Console.WriteLine(user.ToString());
+                    Console.WriteLine(user.Equals(users));
+                }
+
+            }
+            internal static void DeleteUser()
+            {
+
+            }
 
         }
 
-        public void UpdateUser (int Id)
-        {
 
+        public class AdminUserViewModel : AdminUser
+        {
+            public AdminUserViewModel(int Id, string Name, int age, User StuffUser)
+            {
+                this.Id = Id;
+                this.Name = Name;
+                this.age = age;
+                this.StuffUser = StuffUser;
+
+            }
         }
+
+        public class StuffUserViewModel : StuffUser
+        {
+            public StuffUserViewModel(int Id, string Name, int age, string role)
+            {
+                this.Id = Id;
+                this.Name = Name;
+                this.age = age;
+                this.role = role;
+
+            }
+        }
+
     }
+    
 }
 

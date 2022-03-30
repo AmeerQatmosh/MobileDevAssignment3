@@ -9,17 +9,6 @@ namespace Exception__Delegate__and_Event_handler.Models
     internal class StuffUser: User
     { 
         public string role { get; set; }
-
-        /*
-        public StuffUser(int Id, string Name, int age, string role)
-        {
-            this.Id = Id;
-            this.Name = Name;
-            this.age = age;
-            this.role = role;
-        }
-        */
-     
     
         public override string ToString()
         {
