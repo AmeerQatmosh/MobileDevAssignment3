@@ -267,11 +267,12 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
 
         public class StuffUserC : StuffUser
         {
-            public StuffUserC(int Id, string Name, int age)
+            public StuffUserC(int Id, string Name, int age, Role role)
             {
                 this.Id = Id;
                 this.Name = Name;
                 this.age = age;
+                this.role = role;
 
             }
 
@@ -279,10 +280,10 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
             public static void AddStuffUser()
             {
 
-                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21 };
-                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
-                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30 };
-                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21, role = Role.Role1 };
+                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24 ,role = Role.Role2};
+                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30, role = Role.Role3 };
+                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 , role = Role.Role2};
                 List<StuffUser> stuffusers = new List<StuffUser>();
 
                 List<StuffUser> BLibShelf = new List<StuffUser>();
@@ -302,7 +303,23 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
 
                 Console.WriteLine("Please input the new stuff user age:");
                 var age = Convert.ToInt32(Console.ReadLine());
-                var newStuffUser = new StuffUserC(Id, Name, age);
+
+                Console.WriteLine("new stuff role:" );
+                var addrole = Convert.ToInt32(Console.ReadLine());
+                var role = Role.Role1;
+                if (addrole == 1)
+                {
+                    role = Role.Role2;
+
+                }
+                if (addrole == 2)
+                {
+                    role = Role.Role3;
+
+                }
+                else role = Role.Role1;
+
+                var newStuffUser = new StuffUserC(Id, Name, age, role);
                 BLibShelf.Add(newStuffUser);
 
                 Console.WriteLine("Total " + BLibShelf.Count + " stuff users");
@@ -315,10 +332,10 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
             public static void DeleteStuffUser()
             {
 
-                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21 };
-                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
-                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30 };
-                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21, role = Role.Role1 };
+                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24, role = Role.Role2 };
+                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30, role = Role.Role3 };
+                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20, role = Role.Role2 };
                 List<StuffUser> stuffusers = new List<StuffUser>();
 
                 List<StuffUser> BLibShelf = new List<StuffUser>();
@@ -350,10 +367,10 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
 
             public static void EditStuffUser()
             {
-                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21 };
-                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
-                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30 };
-                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21, role = Role.Role1 };
+                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24, role = Role.Role2 };
+                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30, role = Role.Role3 };
+                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20, role = Role.Role2 };
                 List<StuffUser> stuffusers = new List<StuffUser>();
                 List<StuffUser> adminusers = new List<StuffUser>();
                 List<StuffUser> BLibShelf = new List<StuffUser>();
@@ -377,6 +394,25 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
 
                         Console.WriteLine("Enter new stuff user age: ");
                         var editAge = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Enter new stuff user role: ");
+
+                        int editrole = Convert.ToInt32(Console.ReadLine());
+                        if (editrole == 0)
+                        {
+                            BLibShelf[i].role = Role.Role1;
+
+                        }
+                        if (editrole == 1)
+                        {
+                            BLibShelf[i].role = Role.Role2;
+
+                        }
+                        if (editrole == 2)
+                        {
+                            BLibShelf[i].role = Role.Role3;
+
+                        }
 
                         BLibShelf[i].Name = editName;
                         BLibShelf[i].age = editAge;

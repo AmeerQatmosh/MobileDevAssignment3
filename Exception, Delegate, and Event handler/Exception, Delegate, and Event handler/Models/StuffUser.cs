@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace Exception__Delegate__and_Event_handler.Models
 {
-    internal class StuffUser: User
-    { 
-        public string role { get; set; }
+    internal class StuffUser : User
+    {
+        [Flags]
+        public enum Role
+        {
+            Role1,
+            Role2,
+            Role3,
+        }
+        public Role role  { get; set; }
     
         public override string ToString()
         {
