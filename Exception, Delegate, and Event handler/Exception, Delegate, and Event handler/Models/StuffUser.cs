@@ -19,11 +19,11 @@ namespace Exception__Delegate__and_Event_handler.Models
         {
             return base.Equals(obj);
         }
-
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
+
 
     }
 }

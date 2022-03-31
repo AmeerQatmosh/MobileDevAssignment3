@@ -15,33 +15,39 @@ namespace Exception__Delegate__and_Event_handler
         static void Main(string[] args)
         {
 
+
+           
             while (true)
             {
+                
+                Console.WriteLine("-------------------------------------------------------------------");
+                Console.WriteLine("  To perform the following operations. choose the operation number.");
+                Console.WriteLine("-------------------------------------------------------------------");
+                Console.WriteLine("  [1] Add User.                                                    ");
+                Console.WriteLine("  [2] Edit User.                                                   ");
+                Console.WriteLine("  [3] Delete User.                                                 ");
+                Console.WriteLine("  [4] Display Users List.                                          ");
+                Console.WriteLine("-------------------------------------------------------------------");
 
-                Console.WriteLine("[1] Add User.");
-                Console.WriteLine("[2] Edit User. ");
-                Console.WriteLine("[3] Delete User. ");
-                Console.WriteLine("[4] Exit.");
 
-                Console.WriteLine("*Enter your choice! ");
+                Console.WriteLine("Enter your choice: ");
                 int operation = Convert.ToInt32(Console.ReadLine());
                 switch (operation)
                 {
                     case 1:
-                        ViewModels.ViewModels.UserViewModel.NewUser();
+                        ViewModels.ViewModels.UserC.AddUser();
                         break;
 
                     case 2:
                         
                         break;
-
+                        
                     case 3:
-                        Console.WriteLine("*Press any button to exit the application! ");
                         break;
 
                     case 4:
-                        Console.WriteLine("*Press any button to exit the application! ");
-                        return;
+                        break;
+                        
 
                     default:
                         Console.WriteLine("*Unknown choice, Please try again! ");
@@ -50,8 +56,9 @@ namespace Exception__Delegate__and_Event_handler
             }
 
         }
-    
 
+        
+            
     }
 }
 
