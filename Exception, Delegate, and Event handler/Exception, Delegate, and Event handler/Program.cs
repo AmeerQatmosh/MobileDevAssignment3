@@ -24,8 +24,8 @@ namespace Exception__Delegate__and_Event_handler
                 Console.WriteLine("  To perform the following operations. choose the operation number.");
                 Console.WriteLine("-------------------------------------------------------------------");
                 Console.WriteLine("  [1] Add User.                                                    ");
-                Console.WriteLine("  [2] Edit User.                                                   ");
-                Console.WriteLine("  [3] Delete User.                                                 ");
+                Console.WriteLine("  [2] Delete User.                                                 ");
+                Console.WriteLine("  [3] Edit User.                                                   ");
                 Console.WriteLine("  [4] Display Users List.                                          ");
                 Console.WriteLine("-------------------------------------------------------------------");
 
@@ -64,13 +64,10 @@ namespace Exception__Delegate__and_Event_handler
                             Console.WriteLine("-------------------------------------------------------------------");
                             ViewModels.ViewModels.StuffUserC.AddStuffUser();
                         }
-
-
-
                         break;
 
                     case 2:
-                        
+                        ViewModels.ViewModels.UserC.DeleteUser();
                         break;
                         
                     case 3:

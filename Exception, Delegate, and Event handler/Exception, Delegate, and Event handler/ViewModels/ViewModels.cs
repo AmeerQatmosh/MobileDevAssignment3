@@ -20,9 +20,7 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                 this.Id = Id;
                 this.Name = Name;
                 this.age = age;
-
             }
-
 
             public static void AddUser()
             {
@@ -58,6 +56,43 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                 {
                     Console.WriteLine("User Details => " + user.ToString());
                 }
+            }
+
+            public static void DeleteUser()
+            {
+                User user1 = new User() { Id = 11923652, Name = "Ahmad", age = 21 };
+                User user2 = new User() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                User user3 = new User() { Id = 11934652, Name = "Ahd", age = 30 };
+                User user4 = new User() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<User> users = new List<User>();
+
+                List<User> BLibShelf = new List<User>();
+                BLibShelf.AddRange(new List<User>() { user1, user2, user3, user4 });
+
+                foreach (var user in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + user.ToString());
+                }
+
+                Console.WriteLine("Delete user ");
+                Console.WriteLine("User id: ");
+                var Id = Convert.ToInt32(Console.ReadLine());
+
+               
+                for (int i = 0; i < BLibShelf.Count; i++)
+                {
+                    if (Id == BLibShelf[i].Id)
+                    {
+                        BLibShelf.RemoveAt(i);
+                        Console.WriteLine("user successfully removed! ");
+                    }
+                }
+                foreach (var user in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + user.ToString());
+                }
+                
+                
 
 
             }
