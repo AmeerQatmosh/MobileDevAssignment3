@@ -62,36 +62,121 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
 
             }
         }
-    }
-}
- /*       
-        public class AdminUserViewModel : AdminUser
+
+        public class AdminUserC : AdminUser
         {
-            public AdminUserViewModel(int Id, string Name, int age, User StuffUser)
+            public AdminUserC(int Id, string Name, int age)
             {
                 this.Id = Id;
                 this.Name = Name;
                 this.age = age;
-                this.StuffUser = StuffUser;
 
             }
+
+
+            public static void AddAdminUser()
+            {
+
+                AdminUser adminuser1 = new AdminUser() { Id = 11923652, Name = "Ahmad", age = 21 };
+                AdminUser adminuser2 = new AdminUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                AdminUser adminuser3 = new AdminUser() { Id = 11934652, Name = "Ahd", age = 30 };
+                AdminUser adminuser4 = new AdminUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<AdminUser> users = new List<AdminUser>();
+
+                List<AdminUser> BLibShelf = new List<AdminUser>();
+                BLibShelf.AddRange(new List<AdminUser>() { adminuser1, adminuser2, adminuser3, adminuser4 });
+
+                Console.WriteLine("Total " + BLibShelf.Count + " admin users");
+                foreach (var adminuser in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + adminuser.ToString());
+                }
+
+                Console.WriteLine("Please input the new admin user Id:");
+                var Id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Please input the new admin user name:");
+                var Name = Console.ReadLine();
+
+                Console.WriteLine("Please input the new admin user age:");
+                var age = Convert.ToInt32(Console.ReadLine());
+                var newAdminUser = new AdminUserC(Id, Name, age);
+                BLibShelf.Add(newAdminUser);
+
+                Console.WriteLine("Total " + BLibShelf.Count + " users");
+                foreach (var adminuser in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + adminuser.ToString());
+                }
+
+
+
+
+            }
+
+
+
         }
 
-        public class StuffUserViewModel : StuffUser
+
+        public class StuffUserC : StuffUser
         {
-            public StuffUserViewModel(int Id, string Name, int age, string role)
+            public StuffUserC(int Id, string Name, int age)
             {
                 this.Id = Id;
                 this.Name = Name;
                 this.age = age;
-                this.role = role;
 
             }
+
+
+            public static void AddStuffUser()
+            {
+
+                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21 };
+                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30 };
+                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<StuffUser> stuffusers = new List<StuffUser>();
+
+                List<StuffUser> BLibShelf = new List<StuffUser>();
+                BLibShelf.AddRange(new List<StuffUser>() { stuffuser1, stuffuser2, stuffuser3, stuffuser4 });
+
+                Console.WriteLine("Total " + BLibShelf.Count + " stuff users");
+                foreach (var stuffuser in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + stuffuser.ToString());
+                }
+
+                Console.WriteLine("Please input the new stuff user Id:");
+                var Id = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Please input the new stuff user name:");
+                var Name = Console.ReadLine();
+
+                Console.WriteLine("Please input the new stuff user age:");
+                var age = Convert.ToInt32(Console.ReadLine());
+                var newStuffUser = new StuffUserC(Id, Name, age);
+                BLibShelf.Add(newStuffUser);
+
+                Console.WriteLine("Total " + BLibShelf.Count + " stuff users");
+                foreach (var stuffuser in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + stuffuser.ToString());
+                }
+
+
+
+
+            }
+
+
+
         }
+
+
 
 
     }
 }
-    
-*/
 

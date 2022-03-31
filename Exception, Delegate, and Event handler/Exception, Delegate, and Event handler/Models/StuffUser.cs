@@ -17,11 +17,25 @@ namespace Exception__Delegate__and_Event_handler.Models
 
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            if (obj == null)
+            {
+                return false;
+            }
+            StuffUser objAsStuffUser = obj as StuffUser;
+            if (objAsStuffUser == null)
+            {
+                return false;
+            }
+            else return Equals(objAsStuffUser);
         }
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return Id;
+        }
+        public bool Equals(StuffUser other)
+        {
+            if (other == null) return false;
+            return (this.Id.Equals(other.Id));
         }
 
 

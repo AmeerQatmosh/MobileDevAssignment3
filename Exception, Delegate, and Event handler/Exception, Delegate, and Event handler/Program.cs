@@ -35,7 +35,38 @@ namespace Exception__Delegate__and_Event_handler
                 switch (operation)
                 {
                     case 1:
-                        ViewModels.ViewModels.UserC.AddUser();
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.WriteLine("  To perform the following operations. choose the operation number.");
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.WriteLine("[1] Add user                                                       ");
+                        Console.WriteLine("[2] Add Adminuser                                                  ");
+                        Console.WriteLine("[3] Add Stuffuser                                                  ");
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.WriteLine("Enter your choice: ");
+                        int choice = Convert.ToInt32(Console.ReadLine());
+
+                        if ( choice == 1)
+                        {
+                            Console.WriteLine("-------------------------- Add User -------------------------------");
+                            Console.WriteLine("-------------------------------------------------------------------");
+                            ViewModels.ViewModels.UserC.AddUser();
+                        }
+                        if ( choice == 2)
+                        {
+                            Console.WriteLine("----------------------- Add AdminUser -----------------------------");
+                            Console.WriteLine("-------------------------------------------------------------------");
+                            ViewModels.ViewModels.AdminUserC.AddAdminUser();
+
+                        }
+                        if (choice == 3)
+                        {
+                            Console.WriteLine("------------------------ Add StuffUser ----------------------------");
+                            Console.WriteLine("-------------------------------------------------------------------");
+                            ViewModels.ViewModels.StuffUserC.AddStuffUser();
+                        }
+
+
+
                         break;
 
                     case 2:
