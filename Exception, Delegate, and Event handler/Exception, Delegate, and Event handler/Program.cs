@@ -67,7 +67,35 @@ namespace Exception__Delegate__and_Event_handler
                         break;
 
                     case 2:
-                        ViewModels.ViewModels.UserC.DeleteUser();
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.WriteLine("  To perform the following operations. choose the operation number.");
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.WriteLine("[1] Add user                                                       ");
+                        Console.WriteLine("[2] Add Adminuser                                                  ");
+                        Console.WriteLine("[3] Add Stuffuser                                                  ");
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.WriteLine("Enter your choice: ");
+                        int removeChoice = Convert.ToInt32(Console.ReadLine());
+
+                        if (removeChoice == 1)
+                        {
+                            Console.WriteLine("----------------------- Remove User -------------------------------");
+                            Console.WriteLine("-------------------------------------------------------------------");
+                            ViewModels.ViewModels.UserC.DeleteUser();
+                        }
+                        if (removeChoice == 2)
+                        {
+                            Console.WriteLine("-------------------- Remove AdminUser -----------------------------");
+                            Console.WriteLine("-------------------------------------------------------------------");
+                            ViewModels.ViewModels.AdminUserC.DeleteAdminUser();
+
+                        }
+                        if (removeChoice == 3)
+                        {
+                            Console.WriteLine("--------------------- Remove StuffUser ----------------------------");
+                            Console.WriteLine("-------------------------------------------------------------------");
+                            ViewModels.ViewModels.StuffUserC.DeleteStuffUser();
+                        }
                         break;
                         
                     case 3:

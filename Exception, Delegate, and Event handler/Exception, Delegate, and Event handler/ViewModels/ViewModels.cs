@@ -91,10 +91,6 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                 {
                     Console.WriteLine("User Details => " + user.ToString());
                 }
-                
-                
-
-
             }
         }
 
@@ -143,15 +139,49 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                 {
                     Console.WriteLine("User Details => " + adminuser.ToString());
                 }
-
-
-
-
             }
 
+            public static void DeleteAdminUser()
+            {
+
+                AdminUser adminuser1 = new AdminUser() { Id = 11923652, Name = "Ahmad", age = 21 };
+                AdminUser adminuser2 = new AdminUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                AdminUser adminuser3 = new AdminUser() { Id = 11934652, Name = "Ahd", age = 30 };
+                AdminUser adminuser4 = new AdminUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<AdminUser> adminusers = new List<AdminUser>();
+
+                List<AdminUser> BLibShelf = new List<AdminUser>();
+                BLibShelf.AddRange(new List<AdminUser>() { adminuser1, adminuser2, adminuser3, adminuser4 });
+
+                foreach (var adminuser in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + adminuser.ToString());
+                }
+
+                Console.WriteLine("Delete admin user ");
+                Console.WriteLine("Admin User id: ");
+                var Id = Convert.ToInt32(Console.ReadLine());
 
 
+                for (int i = 0; i < BLibShelf.Count; i++)
+                {
+                    if (Id == BLibShelf[i].Id)
+                    {
+                        BLibShelf.RemoveAt(i);
+                        Console.WriteLine("admin user successfully removed! ");
+                    }
+                }
+                foreach (var admin in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + admin.ToString());
+                }
+
+            }
         }
+
+
+
+
 
 
         public class StuffUserC : StuffUser
@@ -199,9 +229,42 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                 {
                     Console.WriteLine("User Details => " + stuffuser.ToString());
                 }
+            }
+
+            public static void DeleteStuffUser()
+            {
+
+                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21 };
+                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30 };
+                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<StuffUser> stuffusers = new List<StuffUser>();
+
+                List<StuffUser> BLibShelf = new List<StuffUser>();
+                BLibShelf.AddRange(new List<StuffUser>() { stuffuser1, stuffuser2, stuffuser3, stuffuser4 });
+
+                foreach (var stuffuser in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + stuffuser.ToString());
+                }
+
+                Console.WriteLine("Delete stuff user ");
+                Console.WriteLine("Stuff User id: ");
+                var Id = Convert.ToInt32(Console.ReadLine());
 
 
-
+                for (int i = 0; i < BLibShelf.Count; i++)
+                {
+                    if (Id == BLibShelf[i].Id)
+                    {
+                        BLibShelf.RemoveAt(i);
+                        Console.WriteLine("stuff user successfully removed! ");
+                    }
+                }
+                foreach (var stuff in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + stuff.ToString());
+                }
 
             }
 
