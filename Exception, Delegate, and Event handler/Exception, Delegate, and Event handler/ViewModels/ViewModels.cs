@@ -74,11 +74,10 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                     Console.WriteLine("User Details => " + user.ToString());
                 }
 
-                Console.WriteLine("Delete user ");
                 Console.WriteLine("User id: ");
                 var Id = Convert.ToInt32(Console.ReadLine());
 
-               
+
                 for (int i = 0; i < BLibShelf.Count; i++)
                 {
                     if (Id == BLibShelf[i].Id)
@@ -91,6 +90,47 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                 {
                     Console.WriteLine("User Details => " + user.ToString());
                 }
+            }
+
+            public static void EditUser()
+            {
+                User user1 = new User() { Id = 11923652, Name = "Ahmad", age = 21 };
+                User user2 = new User() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                User user3 = new User() { Id = 11934652, Name = "Ahd", age = 30 };
+                User user4 = new User() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<User> users = new List<User>();
+                List<User> BLibShelf = new List<User>();
+                BLibShelf.AddRange(new List<User>() { user1, user2, user3, user4 });
+
+                foreach (var user in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + user.ToString());
+                }
+
+                Console.WriteLine("Edit id: ");
+                var Id = Convert.ToInt32(Console.ReadLine());
+
+
+                for (int i = 0; i < BLibShelf.Count; i++)
+                {
+                    if (Id == BLibShelf[i].Id)
+                    {
+                        Console.WriteLine("Enter new user name: ");
+                        var editName = Console.ReadLine();
+
+                        Console.WriteLine("Enter new user age: ");
+                        var editAge = Convert.ToInt32(Console.ReadLine());
+
+                        BLibShelf[i].Name = editName;
+                        BLibShelf[i].age = editAge;
+                        Console.WriteLine("user successfully Edited! ");
+                    }
+                }
+                foreach (var user in BLibShelf)
+                {
+                    Console.WriteLine("User Details => " + user.ToString());
+                }
+
             }
         }
 
@@ -158,7 +198,6 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                     Console.WriteLine("User Details => " + adminuser.ToString());
                 }
 
-                Console.WriteLine("Delete admin user ");
                 Console.WriteLine("Admin User id: ");
                 var Id = Convert.ToInt32(Console.ReadLine());
 
@@ -174,6 +213,48 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                 foreach (var admin in BLibShelf)
                 {
                     Console.WriteLine("User Details => " + admin.ToString());
+                }
+
+            }
+
+        public static void EditAdminUser()
+            {
+                AdminUser adminuser1 = new AdminUser() { Id = 11923652, Name = "Ahmad", age = 21 };
+                AdminUser adminuser2 = new AdminUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                AdminUser adminuser3 = new AdminUser() { Id = 11934652, Name = "Ahd", age = 30 };
+                AdminUser adminuser4 = new AdminUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<AdminUser> adminsusers = new List<AdminUser>();
+                List<AdminUser> adminusers = new List<AdminUser>();
+                List<AdminUser> BLibShelf = new List<AdminUser>();
+                BLibShelf.AddRange(new List<AdminUser>() { adminuser1, adminuser2, adminuser3, adminuser4 });
+
+                foreach (var adminuser in BLibShelf)
+                {
+                    Console.WriteLine("Admin User Details => " + adminuser.ToString());
+                }
+
+                Console.WriteLine("Admin User id: ");
+                var Id = Convert.ToInt32(Console.ReadLine());
+
+
+                for (int i = 0; i < BLibShelf.Count; i++)
+                {
+                    if (Id == BLibShelf[i].Id)
+                    {
+                        Console.WriteLine("Enter new admin user name: ");
+                        var editName = Console.ReadLine();
+
+                        Console.WriteLine("Enter new admin user age: ");
+                        var editAge = Convert.ToInt32(Console.ReadLine());
+
+                        BLibShelf[i].Name = editName;
+                        BLibShelf[i].age = editAge;
+                        Console.WriteLine("Admin user successfully Edited! ");
+                    }
+                }
+                foreach (var user in BLibShelf)
+                {
+                    Console.WriteLine("Admin User Details => " + user.ToString());
                 }
 
             }
@@ -248,7 +329,6 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
                     Console.WriteLine("User Details => " + stuffuser.ToString());
                 }
 
-                Console.WriteLine("Delete stuff user ");
                 Console.WriteLine("Stuff User id: ");
                 var Id = Convert.ToInt32(Console.ReadLine());
 
@@ -268,13 +348,48 @@ namespace Exception__Delegate__and_Event_handler.ViewModels
 
             }
 
+            public static void EditStuffUser()
+            {
+                StuffUser stuffuser1 = new StuffUser() { Id = 11923652, Name = "Ahmad", age = 21 };
+                StuffUser stuffuser2 = new StuffUser() { Id = 11456652, Name = "Ahmadgd", age = 24 };
+                StuffUser stuffuser3 = new StuffUser() { Id = 11934652, Name = "Ahd", age = 30 };
+                StuffUser stuffuser4 = new StuffUser() { Id = 11923456, Name = "Ahfrgtmad", age = 20 };
+                List<StuffUser> stuffusers = new List<StuffUser>();
+                List<StuffUser> adminusers = new List<StuffUser>();
+                List<StuffUser> BLibShelf = new List<StuffUser>();
+                BLibShelf.AddRange(new List<StuffUser>() { stuffuser1, stuffuser2, stuffuser3, stuffuser4 });
+
+                foreach (var stuffuser in BLibShelf)
+                {
+                    Console.WriteLine("Stuff User Details => " + stuffuser.ToString());
+                }
+
+                Console.WriteLine("Stuff User id: ");
+                var Id = Convert.ToInt32(Console.ReadLine());
 
 
+                for (int i = 0; i < BLibShelf.Count; i++)
+                {
+                    if (Id == BLibShelf[i].Id)
+                    {
+                        Console.WriteLine("Enter new stuff user name: ");
+                        var editName = Console.ReadLine();
+
+                        Console.WriteLine("Enter new stuff user age: ");
+                        var editAge = Convert.ToInt32(Console.ReadLine());
+
+                        BLibShelf[i].Name = editName;
+                        BLibShelf[i].age = editAge;
+                        Console.WriteLine("Stuff user successfully Edited! ");
+                    }
+                }
+                foreach (var user in BLibShelf)
+                {
+                    Console.WriteLine("Stuff User Details => " + user.ToString());
+                }
+
+            }
         }
-
-
-
-
     }
 }
 
